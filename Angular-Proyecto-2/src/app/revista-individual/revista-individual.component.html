@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-body">
+    <h1>REVISTA {{ revista.numeroRevista }}</h1>
+
+    <button class="btn btn-success" (click)="booleanMostrarPrevisualizacion()">
+      Previsualizar Revista
+    </button>
+    <div *ngIf="mostrarPrevisualizacion">
+        <br>
+      <p><b>Descripción:</b> {{ revista.descripcion }}</p>
+      <p><b>Categoría:</b> {{ revista.categoria }}</p>
+      <p><b>Etiquetas:</b> {{ revista.tagsArreglo }}</p>
+      <p><b>Me gustas:</b> {{ revista.meGustas }}</p>
+      <p>
+        <b>Perfil Autor: </b
+        ><button class="btn btn-success" (click)="booleanMostrarPerfil()">
+          {{ revista.nombreAutor }}
+        </button>
+      </p>
+
+      <div *ngIf="mostrarPerfilAutor">
+        <app-perfil-autor [autor]="autor"></app-perfil-autor>
+      </div>
+    </div>
+
+    <br />
+    <br />
+<!--
+    <form action="" method="POST" required>
+      <p>
+        <label>Suscribirse a esta Revista: </label>
+        
+            <select id="select" name="numeroRevista">
+                <option value="{{revista.numeroRevista}}">{{revista.numeroRevista}}</option>
+            </select>
+      </p>
+      <input
+        class="form-control"
+        type="date"
+        name="fechaSuscripcion"
+        required
+      />
+      <br>
+      <button class="btn btn-success" type="submit">Suscribirse</button>
+    </form>-->
+    <br />
+  </div>
+</div>
