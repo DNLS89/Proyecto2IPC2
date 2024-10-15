@@ -21,7 +21,8 @@ public class VerPerfilResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getPerfilAutor(@PathParam("nombreAutor") String nombreUsuario, @PathParam("nombreAutor") String nombreAutor) {
         
-        MotorPrograma motorPrograma = MotorPrograma.getInstance(nombreUsuario);
+        MotorPrograma motorPrograma = new MotorPrograma(nombreUsuario);
+        //MotorPrograma motorPrograma = MotorPrograma.getInstance(nombreUsuario);
         
         Usuario autor = motorPrograma.obtenerAutor(nombreAutor);
         return Response.ok(autor).build();

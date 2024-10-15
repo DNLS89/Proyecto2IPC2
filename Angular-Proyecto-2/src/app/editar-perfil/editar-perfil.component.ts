@@ -42,8 +42,8 @@ export class EditarPerfilComponent {
 	}
 
   ngOnInit(): void {
-    // la llamada al servicio
-    this.sub = this.editarPerfilService
+
+     this.sub = this.editarPerfilService
     .obtenerPerfilEditar()
     .subscribe({
       next: (usuario: any) => {
@@ -54,23 +54,14 @@ export class EditarPerfilComponent {
         this.hobbies = this.perfilUsuario.hobbies;
         this.descripcion = this.perfilUsuario.descripcion;
         this.gustos = this.perfilUsuario.gustos;
-        
-        //interval(1000).pipe(takeUntilDestroyed()).subscribe(console.log);
 
       },
       error: (error: any) => {
         console.log(error);
       }
-    });
+    }); 
     
   }
-
-  ngOnDestroy(): void {
-    //this.sub.unsubscribe();
-    //this.notifier.next(undefined);
-    //this.notifier.complete();
-  }
-
 
   editarPerfil() {
     this.editarPerfilService

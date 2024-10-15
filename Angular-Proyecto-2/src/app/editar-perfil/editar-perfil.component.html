@@ -14,8 +14,9 @@
 
                     <h2>A continuación modifique el perfil</h2>
                     <br>
+                    
                     <form action="" method="POST" required>
-                        <p><label>Nuevo Nombre Usuario: </label> <input class="form-control" type="text" name="nombre_usuario" value="{{nombreUsuario}}" [(ngModel)]="nombreUsuario"></p>
+                        <p><label>Nuevo Nombre Usuario: </label> <input class="form-control" type="text" name="nombre_usuario" value="{{this.nombreUsuario}}" [(ngModel)]="nombreUsuario"></p>
                         <p><label>Nueva Contraseña: </label> <input class="form-control" type="text" name="contraseña" value="" [(ngModel)]="contrasena"></p>
                         <p><label>Rol: </label>
                             <select #roles (change)="onSelected(roles.value)" class="form-control" id="select" name="rol">
@@ -24,12 +25,10 @@
                                 <option value="EDITOR">Editor/Autor</option>
                             </select>
                         </p>
-
-                    
                         <p><label>Foto: </label> <input class="form-control" type="file" name="foto" [(ngModel)]="foto"></p>
-                        <p><label>Hobbies: </label> <input class="form-control" type="text" name="hobbies" value="{{hobbies}}" [(ngModel)]="hobbies"></p>
-                        <p><label>Descripción: </label> <input class="form-control" type="text" name="descripcion" value="{{descripcion}}" [(ngModel)]="descripcion"></p>
-                        <p><label>Gustos: </label> <input class="form-control" type="text" name="gustos" value="{{gustos}}" [(ngModel)]="gustos"></p>
+                        <p><label>Hobbies: </label> <input class="form-control" type="text" name="hobbies" value="{{this.hobbies}}" [(ngModel)]="hobbies"></p>
+                        <p><label>Descripción: </label> <input class="form-control" type="text" name="descripcion" value="{{this.descripcion}}" [(ngModel)]="descripcion"></p>
+                        <p><label>Gustos: </label> <input class="form-control" type="text" name="gustos" value="{{this.gustos}}" [(ngModel)]="gustos"></p>
 
                         <br>
                         <button (click)="editarPerfil()" class="btn btn-success" type="submit">Guardar Cambios al Perfil</button>

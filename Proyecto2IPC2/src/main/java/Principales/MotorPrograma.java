@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 
 public class MotorPrograma {
 
-    private static MotorPrograma UNICA_INSTANCIA_DE_MOTOR_PROGRAMA;
+    //private static MotorPrograma UNICA_INSTANCIA_DE_MOTOR_PROGRAMA;
 
     private Usuario usuario;
     private Connection connection;
@@ -96,13 +96,13 @@ public class MotorPrograma {
         this.gestorReportes = gestorReportes;
     }
 
-    public static MotorPrograma getInstance(String nombreUsuario) {
-        if (UNICA_INSTANCIA_DE_MOTOR_PROGRAMA == null) {
-            UNICA_INSTANCIA_DE_MOTOR_PROGRAMA = new MotorPrograma(nombreUsuario);
-        }
-
-        return UNICA_INSTANCIA_DE_MOTOR_PROGRAMA;
-    }
+//    public static MotorPrograma getInstance(String nombreUsuario) {
+//        if (UNICA_INSTANCIA_DE_MOTOR_PROGRAMA == null) {
+//            UNICA_INSTANCIA_DE_MOTOR_PROGRAMA = new MotorPrograma(nombreUsuario);
+//        }
+//
+//        return UNICA_INSTANCIA_DE_MOTOR_PROGRAMA;
+//    }
 
     public Usuario extraerDatosUsuario() {
 

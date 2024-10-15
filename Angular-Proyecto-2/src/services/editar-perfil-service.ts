@@ -9,6 +9,7 @@ import { Usuario } from '../entities/Usuario';
 })
 export class EditarPerfilService {
   restConstants: RestConstants;
+  response: any;
 
   
 

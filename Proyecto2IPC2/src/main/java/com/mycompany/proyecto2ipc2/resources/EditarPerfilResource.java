@@ -21,7 +21,8 @@ public class EditarPerfilResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getPerfil(@PathParam("nombreUsuario") String nombreUsuario) {
         System.out.println("Extrayendo perfio de: " + nombreUsuario);
-        MotorPrograma motorPrograma = MotorPrograma.getInstance(nombreUsuario);
+        MotorPrograma motorPrograma = new MotorPrograma(nombreUsuario);
+        //MotorPrograma motorPrograma = MotorPrograma.getInstance(nombreUsuario);
         Usuario usuario = motorPrograma.extraerDatosUsuario();
         usuario.toString();
         return Response.ok(usuario).build();
@@ -36,7 +37,8 @@ public class EditarPerfilResource {
             @PathParam("rol") String rol, @PathParam("foto") String foto, @PathParam("hobbies") String hobbies, @PathParam("descripcion") String descripcion,
             @PathParam("gustos") String gustos) {
 
-        MotorPrograma motorPrograma = MotorPrograma.getInstance(nombreViejo);
+        MotorPrograma motorPrograma = new MotorPrograma(nombreViejo);
+        //MotorPrograma motorPrograma = MotorPrograma.getInstance(nombreViejo);
 
         System.out.println( "NOmbre usuari: " + nombreUsuarioNuevo + " COntraseña: " + contraseña + " foto: " + foto + " rol: " + rol);
 

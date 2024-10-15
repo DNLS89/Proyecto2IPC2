@@ -22,7 +22,8 @@ public class ExploradorRevistasResource {
     public Response getRevistas() {
         
         String nombreUsuario = "MARIA";
-        MotorPrograma motorPrograma = MotorPrograma.getInstance(nombreUsuario);
+        MotorPrograma motorPrograma = new MotorPrograma(nombreUsuario);
+        //MotorPrograma motorPrograma = MotorPrograma.getInstance(nombreUsuario);
         
         //MotorPrograma motorPrograma = MotorPrograma.getInstance();
         
@@ -48,7 +49,8 @@ public class ExploradorRevistasResource {
     public Response getRevistasPublicadas(@PathParam("nombreAutor") String nombreAutor) {
         
         System.out.println("Recibiendo revistas publicas");
-        MotorPrograma motorPrograma = MotorPrograma.getInstance(nombreAutor);
+        MotorPrograma motorPrograma = new MotorPrograma(nombreAutor);
+        //MotorPrograma motorPrograma = MotorPrograma.getInstance(nombreAutor);
         ArrayList<Revista> revistasPublicadas = motorPrograma.obtenerRevistasPublicadas(nombreAutor);
         
         if (revistasPublicadas != null) {
